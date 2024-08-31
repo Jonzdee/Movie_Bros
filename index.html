@@ -10,27 +10,56 @@
 <body class="body">
     <div class="main-container">
         <!-- navbar -->
-            <div class="nav bg-transparent">
-                <div class="logo">
-                    <img src="./images/mb-removebg-preview.png" alt="" class="logo">
-                </div>
-                <div class="list">
-                    <ul>
-                    <li class="text-white"><a href=""><b>TV Series</b></a></li><br>
-                    <li class="text-white"><a href=""><b>Action</b></a></li><br>
+        <div class="nav bg-transparent flex items-center justify-between px-4 py-2">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="./images/mb-removebg-preview.png" alt="Logo" class="h-20 w-auto">
+            </div>
+    
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <!-- Hamburger icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- Navigation Links Section (hidden by default on mobile) -->
+            <div id="nav-links" class="hidden md:flex list">
+                <ul class="flex space-x-6">
+                    <li class="text-white"><a href=""><b>TV Series</b></a></li>
+                    <li class="text-white"><a href=""><b>Action</b></a></li>
                     <li class="text-white"><a href=""><b>Entertainment</b></a></li>
                 </ul>
-                </div>
-                <div class="search bar">
-                    <form action="/search" method="GET">
-                        <input type="text" name="query" placeholder="Search..." required>
-                        <button type="submit">Search</button>
-                    </form>
-                </div>
             </div>
-
-            <!-- hero -->
-
+    
+            <!-- Search Bar Section (hidden by default on mobile) -->
+            <div class="hidden md:block search-bar">
+                <form action="/search" method="GET" class="flex items-center">
+                    <input type="text" name="query" placeholder="Search..." required class="px-2 py-1 border rounded">
+                    <button type="submit" class="ml-2 px-3 py-1 bg-white text-black rounded">Search</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Responsive Navigation Links (appear on mobile when menu icon is clicked) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-transparent px-4 py-2">
+            <ul class="space-y-2">
+                <li class="text-white"><a href=""><b>TV Series</b></a></li>
+                <li class="text-white"><a href=""><b>Action</b></a></li>
+                <li class="text-white"><a href=""><b>Entertainment</b></a></li>
+            </ul>
+        </div>
+    
+        <!-- hero -->
     </div>
+    
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+   <script src="main.js"></script>
+    
 </body>
 </html>
